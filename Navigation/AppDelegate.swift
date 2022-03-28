@@ -11,9 +11,41 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var appConfiguration: AppConfiguration?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        appConfiguration = AppConfiguration.random()
+        getData()
+        
         return true
+    }
+    
+    
+    private func getData() {
+        guard let appConfiguration = appConfiguration,
+              let apiUrl = URL(string: appConfiguration.rawValue) else {
+            return
+        }
+        
+        print("Getting data from \(apiUrl)")
+                
+        NetworkService.startDataTask(with: apiUrl) { result in
+
+            switch result {
+            case .failure(let error):
+                // In case of no Internet
+                // Code=-1009 "The Internet connection appears to be offline."
+                print(error.localizedDescription)
+
+            case .success(let (response, data)):
+                print("Received data:")
+                if let humanReadable = data.prettyJson { print(humanReadable) }
+                print("Status code: \(response.statusCode)")
+                print("All header fields:")
+                response.allHeaderFields.forEach { print("    \($0): \($1)") }
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

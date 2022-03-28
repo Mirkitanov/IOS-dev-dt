@@ -33,6 +33,10 @@
 		84C0265027BD236800845EA5 /* MainLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0264F27BD236800845EA5 /* MainLogInViewController.swift */; };
 		84C0265327BD239700845EA5 /* MainProfileViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0265227BD239700845EA5 /* MainProfileViewConrtoller.swift */; };
 		84C0265F27BD2D5400845EA5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0265827BD2C7900845EA5 /* Extension.swift */; };
+		84C6E14427F23FE0004B0BAF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E14327F23FE0004B0BAF /* NetworkService.swift */; };
+		84C6E14727F24023004B0BAF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E14627F24023004B0BAF /* NetworkError.swift */; };
+		84C6E14A27F2404F004B0BAF /* Data+JSONPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E14927F2404F004B0BAF /* Data+JSONPrettyPrint.swift */; };
+		84C6E14D27F240E6004B0BAF /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E14C27F240E6004B0BAF /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		84C0264F27BD236800845EA5 /* MainLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogInViewController.swift; sourceTree = "<group>"; };
 		84C0265227BD239700845EA5 /* MainProfileViewConrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileViewConrtoller.swift; sourceTree = "<group>"; };
 		84C0265827BD2C7900845EA5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		84C6E14327F23FE0004B0BAF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		84C6E14627F24023004B0BAF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		84C6E14927F2404F004B0BAF /* Data+JSONPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSONPrettyPrint.swift"; sourceTree = "<group>"; };
+		84C6E14C27F240E6004B0BAF /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
+				84C6E14C27F240E6004B0BAF /* AppConfiguration.swift */,
 				060782B3250CE27700A87020 /* SceneDelegate.swift */,
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
@@ -117,6 +126,7 @@
 		84679A3C25CDC03000D09967 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				84C6E13A27F23D59004B0BAF /* Network */,
 				84C0265527BD2C7900845EA5 /* Extensions */,
 				8473785127E3C49D00C2C025 /* Coordinators */,
 				84C6E13527F236EE004B0BAF /* Presenter */,
@@ -215,6 +225,16 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		84C6E13A27F23D59004B0BAF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				84C6E14327F23FE0004B0BAF /* NetworkService.swift */,
+				84C6E14627F24023004B0BAF /* NetworkError.swift */,
+				84C6E14927F2404F004B0BAF /* Data+JSONPrettyPrint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,10 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C6E14727F24023004B0BAF /* NetworkError.swift in Sources */,
 				8473786727E3CAA400C2C025 /* FeedCoordinator.swift in Sources */,
 				8434264527BEB77700D90A4C /* MainInfoViewController.swift in Sources */,
 				84347DE927EC7BA40082FF9A /* FeedViewOutputProtocol.swift in Sources */,
 				84A64F8E25EEBDEC00725000 /* PhotosTableViewCell.swift in Sources */,
+				84C6E14D27F240E6004B0BAF /* AppConfiguration.swift in Sources */,
 				84C0265327BD239700845EA5 /* MainProfileViewConrtoller.swift in Sources */,
 				84051DB9261CD3E100FAD532 /* PhotosToOneCell.swift in Sources */,
 				84A64F8C25EEBDE900725000 /* PhotosCollectionViewCell.swift in Sources */,
@@ -296,7 +318,9 @@
 				8473786A27E3CAEF00C2C025 /* ProfileCoordinator.swift in Sources */,
 				84A64F8A25EEBDE600725000 /* PhotosViewController.swift in Sources */,
 				8434264227BEB75500D90A4C /* MainPostsViewController.swift in Sources */,
+				84C6E14A27F2404F004B0BAF /* Data+JSONPrettyPrint.swift in Sources */,
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
+				84C6E14427F23FE0004B0BAF /* NetworkService.swift in Sources */,
 				84A64F8825EEBDE100725000 /* Storage.swift in Sources */,
 				8473786327E3CA4C00C2C025 /* AppCoordinator.swift in Sources */,
 				84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */,

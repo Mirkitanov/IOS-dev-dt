@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "once_in_china.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

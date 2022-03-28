@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "boyko_yuriy.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

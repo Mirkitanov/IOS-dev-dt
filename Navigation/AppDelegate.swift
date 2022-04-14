@@ -13,6 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        guard let urlFirst = URL(string: "https://jsonplaceholder.typicode.com/todos/1") else { fatalError() }
+        
+        JsonParsing.parsingFirstTask(url: urlFirst)  { string in
+        }
+        
+        guard let urlSecond = URL(string: "https://swapi.dev/api/planets/1/") else { fatalError() }
+        
+        JsonParsing.parsingSecondTask(url: urlSecond)  { string in
+        }
+        
         return true
     }
 

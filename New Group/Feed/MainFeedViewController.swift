@@ -33,18 +33,12 @@ class MainFeedViewController: UIViewController {
     
     let post: PostOld = PostOld(title: "Пост")
     
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        print(type(of: self), #function)
-//    }
-    
     init(output: FeedViewOutputProtocol) {
         self.output = output
         super.init(nibName:nil, bundle:.main)
     }
     
     required init?(coder: NSCoder) {
-//        super.init(coder: coder)
         print(type(of: self), #function)
         fatalError("init(coder:) has not been implemented")
     }

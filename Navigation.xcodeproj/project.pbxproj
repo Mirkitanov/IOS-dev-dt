@@ -13,6 +13,8 @@
 		060782BE250CE27A00A87020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060782BC250CE27A00A87020 /* LaunchScreen.storyboard */; };
 		060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C7250CEE5D00A87020 /* PostViewController.swift */; };
 		060782CA250CEE7200A87020 /* PostOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* PostOld.swift */; };
+		840354502807603500E81703 /* JsonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403544F2807603500E81703 /* JsonModels.swift */; };
+		84035454280760A100E81703 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84035453280760A100E81703 /* JsonParsing.swift */; };
 		84051DB9261CD3E100FAD532 /* PhotosToOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051DB8261CD3E100FAD532 /* PhotosToOneCell.swift */; };
 		8434263F27BEB44500D90A4C /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434263E27BEB44500D90A4C /* MainFeedViewController.swift */; };
 		8434264227BEB75500D90A4C /* MainPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8434264127BEB75500D90A4C /* MainPostsViewController.swift */; };
@@ -44,6 +46,8 @@
 		060782BF250CE27A00A87020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		060782C7250CEE5D00A87020 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		060782C9250CEE7200A87020 /* PostOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOld.swift; sourceTree = "<group>"; };
+		8403544F2807603500E81703 /* JsonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModels.swift; sourceTree = "<group>"; };
+		84035453280760A100E81703 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		84051DB8261CD3E100FAD532 /* PhotosToOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosToOneCell.swift; sourceTree = "<group>"; };
 		8434263E27BEB44500D90A4C /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		8434264127BEB75500D90A4C /* MainPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostsViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		8403544E28075F0400E81703 /* NetworkJSON */ = {
+			isa = PBXGroup;
+			children = (
+				8403544F2807603500E81703 /* JsonModels.swift */,
+				84035453280760A100E81703 /* JsonParsing.swift */,
+			);
+			path = NetworkJSON;
+			sourceTree = "<group>";
+		};
 		841817DD25C31A9A000E1F0E /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		84679A3C25CDC03000D09967 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				8403544E28075F0400E81703 /* NetworkJSON */,
 				84C0265527BD2C7900845EA5 /* Extensions */,
 				8473785127E3C49D00C2C025 /* Coordinators */,
 				84C6E13527F236EE004B0BAF /* Presenter */,
@@ -285,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84035454280760A100E81703 /* JsonParsing.swift in Sources */,
 				8473786727E3CAA400C2C025 /* FeedCoordinator.swift in Sources */,
 				8434264527BEB77700D90A4C /* MainInfoViewController.swift in Sources */,
 				84347DE927EC7BA40082FF9A /* FeedViewOutputProtocol.swift in Sources */,
@@ -301,6 +316,7 @@
 				8473786327E3CA4C00C2C025 /* AppCoordinator.swift in Sources */,
 				84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */,
 				84C0265F27BD2D5400845EA5 /* Extension.swift in Sources */,
+				840354502807603500E81703 /* JsonModels.swift in Sources */,
 				84C0265027BD236800845EA5 /* MainLogInViewController.swift in Sources */,
 				84347DF027EC7C160082FF9A /* PostPresenter.swift in Sources */,
 				8473785D27E3C96800C2C025 /* MainCoordinatorProtocol.swift in Sources */,

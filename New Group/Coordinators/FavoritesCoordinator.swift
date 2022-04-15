@@ -1,14 +1,14 @@
 //
-//  ProfileCoordinator.swift
+//  FavoritesCoordinator.swift
 //  Navigation
 //
-//  Created by Админ on 17.03.2022.
+//  Created by Админ on 15.04.2022.
 //  Copyright © 2022 Artem Novichkov. All rights reserved.
 //
 
 import UIKit
 
-class ProfileCoordinator: FlowCoordinatorProtocol {
+class FavoritesCoordinator: FlowCoordinatorProtocol {
     
     var navigationController: UINavigationController
     weak var mainCoordinator: AppCoordinator?
@@ -19,7 +19,7 @@ class ProfileCoordinator: FlowCoordinatorProtocol {
     }
 
     func start() {
-        let vc = MainLogInViewController()
+        let vc = FavoritesViewController()
         vc.flowCoordinator = self
         
         navigationController.pushViewController(vc, animated: true)
@@ -29,21 +29,5 @@ class ProfileCoordinator: FlowCoordinatorProtocol {
         guard navigationController.viewControllers.count > 0 else { return }
 
         navigationController.popToRootViewController(animated: true)
-    }
-    
-    func gotoProfile() {
-        let vc = MainProfileViewController(dataStorageModel: DataStorageModel())
-        vc.flowCoordinator = self
-        
-        navigationController.navigationBar.isHidden = true
-        navigationController.pushViewController(vc, animated: true)
-    }
-
-    func gotoPhotos() {
-        let vc = PhotosViewController()
-        vc.flowCoordinator = self
-        
-        navigationController.pushViewController(vc, animated: true)
-        
     }
 }

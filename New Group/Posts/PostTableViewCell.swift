@@ -3,9 +3,13 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
+    let dataModel = DataStorageModel()
+    
+    var completion: (() -> Void)?
+    
     var postInScreen: Post? {
         didSet {
-            postImageView.image = postInScreen?.image
+            postImageView.image = UIImage(named: postInScreen?.image ?? "blue_pixel")
             titleLabel.text = postInScreen?.name
             descriptionLabel.text = postInScreen?.description
             likesLabel.text = postInScreen?.likes
@@ -52,6 +56,7 @@ class PostTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .black
         imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -68,6 +73,10 @@ class PostTableViewCell: UITableViewCell {
     
     private func setupViews() {
         contentView.addSubviews(postImageView, titleLabel, descriptionLabel, likesLabel, viewsLabel)
+        
+        let favoriteRecognizer = UITapGestureRecognizer(target: self, action: #selector(favorite))
+        favoriteRecognizer.numberOfTapsRequired = 2
+        postImageView.addGestureRecognizer(favoriteRecognizer)
         
         let constraints = [
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
@@ -94,6 +103,11 @@ class PostTableViewCell: UITableViewCell {
          ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    @objc func favorite() {
+        completion?()
+        print("post was liked")
     }
 }
 

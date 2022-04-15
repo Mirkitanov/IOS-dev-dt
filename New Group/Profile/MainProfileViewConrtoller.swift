@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
 class MainProfileViewController: UIViewController {
     
     weak var flowCoordinator: ProfileCoordinator?
     
     private let tableView = UITableView(frame: .zero, style: .grouped)
+    
+    let tapToPics = UITapGestureRecognizer(target: self, action: #selector(tapToPhotos))
+    
+    private let dataStorage: DataStorageModel
+    
+    init(dataStorageModel: DataStorageModel) {
+        dataStorage = dataStorageModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +66,10 @@ class MainProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
+    
+    @objc func tapToPhotos(sender: UITapGestureRecognizer){
+        print("Tapped")
+    }
 }
 
 extension MainProfileViewController: UITableViewDataSource {
@@ -85,6 +103,12 @@ extension MainProfileViewController: UITableViewDataSource {
             let tableSection: PostSection = Storage.tableModel[indexPath.section]
             let post: Post = tableSection.posts![indexPath.row]
             cell.postInScreen = post
+            cell.completion = { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.dataStorage.saveFavoritePost(post: post)
+            }
             
             return cell
         }

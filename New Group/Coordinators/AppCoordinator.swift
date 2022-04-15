@@ -26,6 +26,15 @@ class AppCoordinator: MainCoordinatorProtocol {
         return navigationController
     }()
     
+    /// Favorites tab bar navigation
+    lazy var favoritesNavigationController: UINavigationController = {
+        var navigationController = UINavigationController()
+        let title = "Favorites"
+        let image = UIImage(systemName: "paperclip")
+        navigationController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: image)
+        return navigationController
+    }()
+    
     var tabBarController: UITabBarController
     var flowCoordinators = [FlowCoordinatorProtocol]()
 
@@ -36,7 +45,8 @@ class AppCoordinator: MainCoordinatorProtocol {
     func start() {
         flowCoordinators = [
             FeedCoordinator(navigationController: feedNavigationController, mainCoordinator: self),
-            ProfileCoordinator(navigationController: profileNavigationController, mainCoordinator: self)
+            ProfileCoordinator(navigationController: profileNavigationController, mainCoordinator: self),
+            FavoritesCoordinator(navigationController: favoritesNavigationController, mainCoordinator: self)
         ]
         
         for coordinator in flowCoordinators {
@@ -44,6 +54,9 @@ class AppCoordinator: MainCoordinatorProtocol {
         }
         
         // Add tab bars controllers
-        tabBarController.viewControllers = [feedNavigationController, profileNavigationController]
+        tabBarController.viewControllers = [feedNavigationController,
+                                            profileNavigationController,
+                                            favoritesNavigationController]
+        
     }
 }

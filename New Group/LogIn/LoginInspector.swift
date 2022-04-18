@@ -23,8 +23,8 @@ import RealmSwift
 class LoginInspector: LoginViewControllerDelegate {
     
     private var realm: Realm? {
-        var config = Realm.Configuration()
-        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("users.realm")
+        let key = RealmEncryption.manager.encryptionKey
+        let config = Realm.Configuration(encryptionKey: key)
         return try? Realm(configuration: config)
     }
     

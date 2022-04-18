@@ -11,6 +11,8 @@ class MainLogInViewController: UIViewController {
     
     weak var flowCoordinator: ProfileCoordinator?
     
+    var authorizationDelegate: LoginViewControllerDelegate?
+    
     var logInScrollView: UIScrollView = {
         let logInScrollView = UIScrollView()
         logInScrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,9 +83,19 @@ class MainLogInViewController: UIViewController {
         return logInButton
     }()
     
+    var warning: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .systemRed
+        label.numberOfLines = 1
+        label.textAlignment = .left
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        warning.text = ""
         setupViews()
     }
     
@@ -97,7 +109,8 @@ class MainLogInViewController: UIViewController {
                                     emailOrPhoneTextField,
                                     passwordTextField,
                                     longLine,
-                                    logInButton)
+                                    logInButton,
+                                    warning)
         
         let constraints = [
             logInScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -137,13 +150,49 @@ class MainLogInViewController: UIViewController {
             logInButton.topAnchor.constraint(equalTo: bigFieldForTwoTextFieldsImageView.bottomAnchor, constant: 16),
             logInButton.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 16),
             logInButton.trailingAnchor.constraint(equalTo: wrapperView.trailingAnchor, constant: -16),
-            logInButton.heightAnchor.constraint(equalToConstant: 50)
+            logInButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            warning.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
+            warning.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }
     
     @objc private func logInButtonPressed() {
         
+        self.warning.textColor = .systemRed
+        /// Check that delegate is not nil
+        guard let delegate = self.authorizationDelegate else {
+            warning.text = "Authorization delegate is nil"
+            return
+        }
+        /// Check that login is not empty
+        guard let login = emailOrPhoneTextField.text, login != "" else {
+            warning.text = "Please input login"
+            return
+        }
+        /// Check that password is not empty
+        guard let password = passwordTextField.text, password != "" else {
+            warning.text = "Please input password"
+            return
+        }
+        /// Check login and password
+        if !delegate.checkLogin(login) || !delegate.checkPassword(password) {
+            warning.text = "Login or password wrong"
+            return
+        }
+        
+        self.warning.textColor = .systemGreen
+        self.warning.text = "Login & password are correct"
+        
+        //Make textfield inactive
+        self.emailOrPhoneTextField.textColor = .gray
+        self.emailOrPhoneTextField.isUserInteractionEnabled = false
+        self.passwordTextField.textColor = .gray
+        self.passwordTextField.isSecureTextEntry = false
+        self.passwordTextField.isUserInteractionEnabled = false
+        
+        // Go to MainProfileViewController
         flowCoordinator?.gotoProfile()
     }
     

@@ -33,6 +33,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
         self.window = window
+        
+        let loginFactoryForSecondTask = MyLoginFactory()
+        
+        let loginInspectorForSecondTask = loginFactoryForSecondTask.createLoginInspector()
+        
+        if let tabBarController = window.rootViewController as? UITabBarController, let loginNavigation = tabBarController.viewControllers?.last as? UINavigationController, let loginController = loginNavigation.viewControllers.first as? MainLogInViewController {
+            
+            loginController.authorizationDelegate = loginInspectorForSecondTask
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

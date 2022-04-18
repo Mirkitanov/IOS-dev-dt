@@ -33,6 +33,7 @@
 		8473786327E3CA4C00C2C025 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473786227E3CA4C00C2C025 /* AppCoordinator.swift */; };
 		8473786727E3CAA400C2C025 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473786627E3CAA400C2C025 /* FeedCoordinator.swift */; };
 		8473786A27E3CAEF00C2C025 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473786927E3CAEF00C2C025 /* ProfileCoordinator.swift */; };
+		847B28D2280DEF00003A7245 /* RealmEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B28D1280DEF00003A7245 /* RealmEncryption.swift */; };
 		84A64F8825EEBDE100725000 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A64F8625EEB79B00725000 /* Storage.swift */; };
 		84A64F8A25EEBDE600725000 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A64F8225EEB6E400725000 /* PhotosViewController.swift */; };
 		84A64F8C25EEBDE900725000 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A64F8325EEB6E400725000 /* PhotosCollectionViewCell.swift */; };
@@ -73,6 +74,7 @@
 		8473786227E3CA4C00C2C025 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8473786627E3CAA400C2C025 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		8473786927E3CAEF00C2C025 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		847B28D1280DEF00003A7245 /* RealmEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEncryption.swift; sourceTree = "<group>"; };
 		84A64F8225EEB6E400725000 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		84A64F8325EEB6E400725000 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		84A64F8425EEB6E400725000 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				843911C82809F0D000363E85 /* LoginViewControllerDelegate.swift */,
 				843911D12809FF7F00363E85 /* User.swift */,
 				843911D42809FFBD00363E85 /* Errors.swift */,
+				847B28D1280DEF00003A7245 /* RealmEncryption.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				84A64F8C25EEBDE900725000 /* PhotosCollectionViewCell.swift in Sources */,
 				8473786027E3C9A800C2C025 /* FlowCoordinatorProtocol.swift in Sources */,
 				8473786A27E3CAEF00C2C025 /* ProfileCoordinator.swift in Sources */,
+				847B28D2280DEF00003A7245 /* RealmEncryption.swift in Sources */,
 				84A64F8A25EEBDE600725000 /* PhotosViewController.swift in Sources */,
 				843911D52809FFBD00363E85 /* Errors.swift in Sources */,
 				8434264227BEB75500D90A4C /* MainPostsViewController.swift in Sources */,

@@ -20,6 +20,11 @@
 		84347DE927EC7BA40082FF9A /* FeedViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84347DE827EC7BA40082FF9A /* FeedViewOutputProtocol.swift */; };
 		84347DF027EC7C160082FF9A /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84347DEF27EC7C160082FF9A /* PostPresenter.swift */; };
 		84353A5127DD13CA00F9DB45 /* MainProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84353A5027DD13CA00F9DB45 /* MainProfileHeaderView.swift */; };
+		843911C32809F0A500363E85 /* LoginFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843911C12809F0A500363E85 /* LoginFactoryProtocol.swift */; };
+		843911C42809F0A500363E85 /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843911C02809F0A500363E85 /* LoginInspector.swift */; };
+		843911C52809F0A500363E85 /* MyLoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843911C22809F0A500363E85 /* MyLoginFactory.swift */; };
+		843911C62809F0A500363E85 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843911BF2809F0A500363E85 /* Checker.swift */; };
+		843911C92809F0D000363E85 /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843911C82809F0D000363E85 /* LoginViewControllerDelegate.swift */; };
 		84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84679A6325DAE0C100D09967 /* PostTableViewCell.swift */; };
 		8473785D27E3C96800C2C025 /* MainCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473785C27E3C96800C2C025 /* MainCoordinatorProtocol.swift */; };
 		8473786027E3C9A800C2C025 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473785F27E3C9A800C2C025 /* FlowCoordinatorProtocol.swift */; };
@@ -51,6 +56,11 @@
 		84347DE827EC7BA40082FF9A /* FeedViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewOutputProtocol.swift; sourceTree = "<group>"; };
 		84347DEF27EC7C160082FF9A /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		84353A5027DD13CA00F9DB45 /* MainProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileHeaderView.swift; sourceTree = "<group>"; };
+		843911BF2809F0A500363E85 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
+		843911C02809F0A500363E85 /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
+		843911C12809F0A500363E85 /* LoginFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactoryProtocol.swift; sourceTree = "<group>"; };
+		843911C22809F0A500363E85 /* MyLoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoginFactory.swift; sourceTree = "<group>"; };
+		843911C82809F0D000363E85 /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
 		84679A6325DAE0C100D09967 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8473785C27E3C96800C2C025 /* MainCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		8473785F27E3C9A800C2C025 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -109,7 +119,12 @@
 		841817DD25C31A9A000E1F0E /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				843911BF2809F0A500363E85 /* Checker.swift */,
+				843911C12809F0A500363E85 /* LoginFactoryProtocol.swift */,
+				843911C02809F0A500363E85 /* LoginInspector.swift */,
+				843911C22809F0A500363E85 /* MyLoginFactory.swift */,
 				84C0264F27BD236800845EA5 /* MainLogInViewController.swift */,
+				843911C82809F0D000363E85 /* LoginViewControllerDelegate.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -286,9 +301,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8473786727E3CAA400C2C025 /* FeedCoordinator.swift in Sources */,
+				843911C52809F0A500363E85 /* MyLoginFactory.swift in Sources */,
 				8434264527BEB77700D90A4C /* MainInfoViewController.swift in Sources */,
 				84347DE927EC7BA40082FF9A /* FeedViewOutputProtocol.swift in Sources */,
 				84A64F8E25EEBDEC00725000 /* PhotosTableViewCell.swift in Sources */,
+				843911C62809F0A500363E85 /* Checker.swift in Sources */,
 				84C0265327BD239700845EA5 /* MainProfileViewConrtoller.swift in Sources */,
 				84051DB9261CD3E100FAD532 /* PhotosToOneCell.swift in Sources */,
 				84A64F8C25EEBDE900725000 /* PhotosCollectionViewCell.swift in Sources */,
@@ -299,9 +316,11 @@
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
 				84A64F8825EEBDE100725000 /* Storage.swift in Sources */,
 				8473786327E3CA4C00C2C025 /* AppCoordinator.swift in Sources */,
+				843911C92809F0D000363E85 /* LoginViewControllerDelegate.swift in Sources */,
 				84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */,
 				84C0265F27BD2D5400845EA5 /* Extension.swift in Sources */,
 				84C0265027BD236800845EA5 /* MainLogInViewController.swift in Sources */,
+				843911C32809F0A500363E85 /* LoginFactoryProtocol.swift in Sources */,
 				84347DF027EC7C160082FF9A /* PostPresenter.swift in Sources */,
 				8473785D27E3C96800C2C025 /* MainCoordinatorProtocol.swift in Sources */,
 				060782CA250CEE7200A87020 /* PostOld.swift in Sources */,
@@ -309,6 +328,7 @@
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
 				8434263F27BEB44500D90A4C /* MainFeedViewController.swift in Sources */,
 				84353A5127DD13CA00F9DB45 /* MainProfileHeaderView.swift in Sources */,
+				843911C42809F0A500363E85 /* LoginInspector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

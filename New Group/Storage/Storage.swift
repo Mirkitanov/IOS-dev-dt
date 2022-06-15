@@ -50,16 +50,16 @@ enum PostSectionType {
 }
 
 struct Post {
-    let image: UIImage
-    let name: String
-    let likes: String
-    let views: String
-    var description: String? = nil
+    var image: UIImage?
+    var name: String
+    var likes: String
+    var views: String
+    var description: String
 }
 
 struct PostSection{
-    let type: PostSectionType
-    let posts: [Post]?
+    var type: PostSectionType
+    var posts: [Post]?
     var footer: String? = nil
 }
 
@@ -85,6 +85,68 @@ struct Storage {
             ]
         )
 
-    ] 
+    ]
+
+}
+
+struct PostStorage {
+    static var tableModel = [
+        PostSection(
+            type: .photos,
+            posts: nil
+        ),
+        PostSection(
+            type: .posts,
+            posts: [
+                
+                Post(image: UIImage(named: "witcher"),
+                     name: "vedmak.official",
+                     likes: "Likes: 240",
+                     views: "Views: 312",
+                     description:"Новые кадры со съемок второго сезона сериала 'Ведьмак'"),
+                
+                Post(image: UIImage(named: "netology"),
+                     name: "Нетология. Меняем Карьеру через образование",
+                     likes: "Likes: 766",
+                     views: "Views: 893",
+                     description: "От \u{00AB}Hello, World!\u{00BB} до первого сложного iOS-приложения \u{2014} всего один курс. Если чувствуете в себе силу для покорения топов AppStore \u{2014} пора начинать дейтвовать! Профессия \u{00AB}iOS-разработчик\" \u{2014} тот самый путь, по которому стоит пройти до самого конца. Вы научитесь создавать приожения на языке Swift с нуля: от начинки до интерфейса. Чтобы закрепить знания на практике, каждый студент подготовит дипломную работу \u{2014} VK-like приложение с возможностью публиковать фотографии, использовать фильтры, ставить лайки и подписываться на других пользователей."),
+    
+                Post(image: UIImage(named: "ip_man"),
+                     name: "Ип Ман. Учитель Брюса Ли, человек открывший миру стиль Вин-Чун",
+                     likes: "Likes: 280",
+                     views: "Views: 634",
+                     description:"В 50-х — 60-х годах XX века в Гонконге Ип Ман первым начал открытое преподавание кунг-фу Вин Чун, которое до той поры оставалось клановым. В Европе и Америке известен также как учитель киноактера Брюса Ли, познакомившего Западный мир с китайскими боевыми искусствами. Неофициально именуется патриархом Вин Чун"),
+                Post(image: UIImage(named: "bruce_lee"),
+                     name: "Брюс Ли. Человек-легенда",
+                     likes: "Likes: 820",
+                     views: "Views: 1233",
+                     description: "\u{00AB}Я говорю, опустоши свой ум, будь аморфным, бесформенным, как вода. Ты наливаешь воду в чашку, она становится чашкой. Ты наливаешь воду в бутылку, она становится бутылкой. Ты наливаешь воду в чайник, она становится чайником. Вода может течь, а может крушить. Будь водой, друг мой...\u{00BB} Философия Брюса Ли"),
+            ]
+        )
+    ]
+    
+    /// Метод перемещения ячейки (section, row) внутри Модели для TableView
+    static func moveItem(sourceIndexSection: Int, sourceIndexRow: Int, destinationIndexSection: Int, destinationIndexRow: Int) {
+        
+        if sourceIndexSection == destinationIndexSection {
+            if destinationIndexSection == destinationIndexRow {
+                return
+            }
+        }
+        
+        guard let onePost = PostStorage.tableModel[sourceIndexSection].posts?[sourceIndexRow] else {
+            return
+        }
+    
+        PostStorage.tableModel[sourceIndexSection].posts?.remove(at: sourceIndexRow)
+        
+        PostStorage.tableModel[destinationIndexSection].posts?.insert(onePost, at: destinationIndexRow)
+    }
+    
+    /// Метод добавления Поста в ячейку (section, row) внутри Модели для TableView
+    static func addPostItem(_ post: Post, indexSection: Int, indexRow: Int) {
+        
+        PostStorage.tableModel[indexSection].posts?.insert(post, at: indexRow)
+    }
     
 }

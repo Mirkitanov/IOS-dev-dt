@@ -20,6 +20,12 @@
 		84347DE927EC7BA40082FF9A /* FeedViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84347DE827EC7BA40082FF9A /* FeedViewOutputProtocol.swift */; };
 		84347DF027EC7C160082FF9A /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84347DEF27EC7C160082FF9A /* PostPresenter.swift */; };
 		84353A5127DD13CA00F9DB45 /* MainProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84353A5027DD13CA00F9DB45 /* MainProfileHeaderView.swift */; };
+		8438243F285A5DBE009D7023 /* MapCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438243E285A5DBE009D7023 /* MapCordinator.swift */; };
+		84382443285A5E40009D7023 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84382442285A5E40009D7023 /* MapViewController.swift */; };
+		8438244D285A6723009D7023 /* LockMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438244C285A6723009D7023 /* LockMapView.swift */; };
+		84382450285A6781009D7023 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438244F285A6781009D7023 /* LocationService.swift */; };
+		84382457285A68C2009D7023 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84382456285A68C2009D7023 /* AlertPresenter.swift */; };
+		8438245A285A68F1009D7023 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84382459285A68F1009D7023 /* AlertFactory.swift */; };
 		84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84679A6325DAE0C100D09967 /* PostTableViewCell.swift */; };
 		8473785D27E3C96800C2C025 /* MainCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473785C27E3C96800C2C025 /* MainCoordinatorProtocol.swift */; };
 		8473786027E3C9A800C2C025 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473785F27E3C9A800C2C025 /* FlowCoordinatorProtocol.swift */; };
@@ -51,6 +57,12 @@
 		84347DE827EC7BA40082FF9A /* FeedViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewOutputProtocol.swift; sourceTree = "<group>"; };
 		84347DEF27EC7C160082FF9A /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		84353A5027DD13CA00F9DB45 /* MainProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileHeaderView.swift; sourceTree = "<group>"; };
+		8438243E285A5DBE009D7023 /* MapCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCordinator.swift; sourceTree = "<group>"; };
+		84382442285A5E40009D7023 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8438244C285A6723009D7023 /* LockMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockMapView.swift; sourceTree = "<group>"; };
+		8438244F285A6781009D7023 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		84382456285A68C2009D7023 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		84382459285A68F1009D7023 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		84679A6325DAE0C100D09967 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8473785C27E3C96800C2C025 /* MainCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		8473785F27E3C9A800C2C025 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -114,12 +126,23 @@
 			path = LogIn;
 			sourceTree = "<group>";
 		};
+		84382441285A5E0F009D7023 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				84382442285A5E40009D7023 /* MapViewController.swift */,
+				8438244C285A6723009D7023 /* LockMapView.swift */,
+				8438244F285A6781009D7023 /* LocationService.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		84679A3C25CDC03000D09967 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
 				84C0265527BD2C7900845EA5 /* Extensions */,
 				8473785127E3C49D00C2C025 /* Coordinators */,
 				84C6E13527F236EE004B0BAF /* Presenter */,
+				84382441285A5E0F009D7023 /* Map */,
 				84C6E13427F236CD004B0BAF /* Feed */,
 				84C6E13327F23693004B0BAF /* Info */,
 				84C6E13027F234EB004B0BAF /* Profile */,
@@ -158,6 +181,7 @@
 				8473786227E3CA4C00C2C025 /* AppCoordinator.swift */,
 				8473786627E3CAA400C2C025 /* FeedCoordinator.swift */,
 				8473786927E3CAEF00C2C025 /* ProfileCoordinator.swift */,
+				8438243E285A5DBE009D7023 /* MapCordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -211,6 +235,8 @@
 			children = (
 				84347DEF27EC7C160082FF9A /* PostPresenter.swift */,
 				84347DE827EC7BA40082FF9A /* FeedViewOutputProtocol.swift */,
+				84382456285A68C2009D7023 /* AlertPresenter.swift */,
+				84382459285A68F1009D7023 /* AlertFactory.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -290,7 +316,9 @@
 				84347DE927EC7BA40082FF9A /* FeedViewOutputProtocol.swift in Sources */,
 				84A64F8E25EEBDEC00725000 /* PhotosTableViewCell.swift in Sources */,
 				84C0265327BD239700845EA5 /* MainProfileViewConrtoller.swift in Sources */,
+				84382457285A68C2009D7023 /* AlertPresenter.swift in Sources */,
 				84051DB9261CD3E100FAD532 /* PhotosToOneCell.swift in Sources */,
+				8438244D285A6723009D7023 /* LockMapView.swift in Sources */,
 				84A64F8C25EEBDE900725000 /* PhotosCollectionViewCell.swift in Sources */,
 				8473786027E3C9A800C2C025 /* FlowCoordinatorProtocol.swift in Sources */,
 				8473786A27E3CAEF00C2C025 /* ProfileCoordinator.swift in Sources */,
@@ -299,13 +327,17 @@
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
 				84A64F8825EEBDE100725000 /* Storage.swift in Sources */,
 				8473786327E3CA4C00C2C025 /* AppCoordinator.swift in Sources */,
+				8438245A285A68F1009D7023 /* AlertFactory.swift in Sources */,
 				84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */,
 				84C0265F27BD2D5400845EA5 /* Extension.swift in Sources */,
 				84C0265027BD236800845EA5 /* MainLogInViewController.swift in Sources */,
+				8438243F285A5DBE009D7023 /* MapCordinator.swift in Sources */,
 				84347DF027EC7C160082FF9A /* PostPresenter.swift in Sources */,
+				84382443285A5E40009D7023 /* MapViewController.swift in Sources */,
 				8473785D27E3C96800C2C025 /* MainCoordinatorProtocol.swift in Sources */,
 				060782CA250CEE7200A87020 /* PostOld.swift in Sources */,
 				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
+				84382450285A6781009D7023 /* LocationService.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
 				8434263F27BEB44500D90A4C /* MainFeedViewController.swift in Sources */,
 				84353A5127DD13CA00F9DB45 /* MainProfileHeaderView.swift in Sources */,
@@ -376,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -430,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -447,6 +479,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79RZ866842;
 				INFOPLIST_FILE = Navigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79RZ866842;
 				INFOPLIST_FILE = Navigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

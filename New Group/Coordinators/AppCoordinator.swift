@@ -17,11 +17,21 @@ class AppCoordinator: MainCoordinatorProtocol {
         navigationController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: image)
         return navigationController
     }()
+    
     /// Profile tab bar navigation
     lazy var profileNavigationController: UINavigationController = {
         var navigationController = UINavigationController()
         let title = "Profile"
         let image = UIImage(systemName: "person.fill")
+        navigationController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: image)
+        return navigationController
+    }()
+    
+    /// Map tab bar navigation
+    lazy var mapNavigationController: UINavigationController = {
+        var navigationController = UINavigationController()
+        let title = "Map"
+        let image = UIImage(systemName: "viewfinder.circle.fill")
         navigationController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: image)
         return navigationController
     }()
@@ -36,7 +46,8 @@ class AppCoordinator: MainCoordinatorProtocol {
     func start() {
         flowCoordinators = [
             FeedCoordinator(navigationController: feedNavigationController, mainCoordinator: self),
-            ProfileCoordinator(navigationController: profileNavigationController, mainCoordinator: self)
+            ProfileCoordinator(navigationController: profileNavigationController, mainCoordinator: self),
+            MapCoordinator(navigationController: mapNavigationController, mainCoordinator: self)
         ]
         
         for coordinator in flowCoordinators {
@@ -44,6 +55,6 @@ class AppCoordinator: MainCoordinatorProtocol {
         }
         
         // Add tab bars controllers
-        tabBarController.viewControllers = [feedNavigationController, profileNavigationController]
+        tabBarController.viewControllers = [feedNavigationController, profileNavigationController, mapNavigationController]
     }
 }
